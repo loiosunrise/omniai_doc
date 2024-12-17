@@ -1,0 +1,22 @@
+version: "3.8"
+
+networks:
+  omniai-doc-network:
+    driver: bridge
+
+volumes:
+  frontend_log:
+
+services:
+  omniai-doc:
+    container_name: omniai-doc
+    build:
+      context: .  # 指定 Dockerfile 的上下文目录
+      dockerfile: ./docker/Dockerfile  # 指定 Dockerfile 的文件名
+    ports:
+      - "10008:8080"
+    volumes:
+      - "frontend_log:/var/log"
+    restart: always
+    networks:
+      - omniai-doc-network
