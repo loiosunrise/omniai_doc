@@ -12,7 +12,7 @@ export default defineConfig({
 			},
 			sidebar: [
 				{ label: '介绍', link: '/introduction' },
-				{ label: '使用指导', link: 'guides/example' },
+				{ label: '使用指导', link: '/guide' },
 				{ label: '计费方式与模型定价', link: '/model_price' },
 			],
 		}),
