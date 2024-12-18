@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniAI - 便捷且高效地访问所有AI模型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        
+        .decorative-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            margin: 0 auto;
+            flex-wrap: nowrap;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+        
+        .logo-item {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .logo-item img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            opacity: 0.85;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(
+                135deg,
+                rgba(219, 234, 254, 0.6) 0%,
+                rgba(167, 243, 208, 0.6) 50%,
+                rgba(236, 254, 255, 0.6) 100%
+            );
+        }
+
+        .logo-section {
+            position: relative;
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        .nav-bg {
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(236, 254, 255, 0.9) 50%,
+                rgba(219, 234, 254, 0.9) 100%
+            );
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(219, 234, 254, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-logo {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            position: relative;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 overflow-x-hidden gradient-bg">
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center px-[5%] py-4 fixed top-0 w-full z-50 nav-bg">
+        <div class="flex items-center gap-2 text-2xl nav-logo">
+            OmniAI
+        </div>
+        <div class="flex gap-8 items-center">
+            <a href="https://omniai.pandalla.ai/introduction" 
+               class="text-sm nav-link transition-all">
+                文档
+            </a>
+            <a href="https://api.pandalla.ai/pricing"
+               class="text-sm nav-link transition-all">
+                模型价格
+            </a>
+            <a href="https://api.pandalla.ai/topup"
+               class="text-sm nav-link transition-all">
+                余额
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-[5%] text-center relative min-h-screen flex flex-col items-center justify-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            便捷且高效地<br/>访问所有AI模型
+        </h1>
+        <div class="text-6xl md:text-7xl font-bold my-8 bg-gradient-to-r from-blue-500 via-teal-500 to-green-500 text-transparent bg-clip-text">
+            OmniAI
+        </div>
+        <div class="max-w-3xl mx-auto mb-12 text-lg text-gray-700 leading-relaxed">
+            <p>以更实惠的价格提供企业级API服务，所有主流AI模型一站式访问！</p>
+            <p>完全兼容各平台接口，零开发基础即可轻松接入。</p>
+            <p>不用担心网络问题，稳定快速，高效整合资源，助您轻松实现AI应用！！</p>
+        </div>
+
+        <div class="flex gap-4 justify-center mb-12">
+            <a href="https://api.pandalla.ai/token"
+               class="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                立即开始
+            </a>
+            <a href="https://omniai.pandalla.ai/introduction"
+               class="px-8 py-3 border border-gray-300 text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors">
+                查看文档
+            </a>
+        </div>
+
+        <div class="text-center w-full">
+            <p class="text-sm text-gray-500 mb-6">支持以下平台商（更多供应商整合中）</p>
+            <div class="logo-section">
+                <div class="logo-grid">
+                    <div class="logo-item">
+                        <img src="/omniai/brands/openai_logo.svg" alt="OpenAI Logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/omniai/brands/claude_logo.svg" alt="Claude Logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/omniai/brands/qwen_logo.svg" alt="Qwen Logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/omniai/brands/mistral_logo.svg" alt="Mistral Logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/omniai/brands/stability_logo.svg" alt="Stability Logo">
+                    </div>
+                    <div class="logo-item">
+                        <img src="/omniai/brands/suno_logo.svg" alt="Suno Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="decorative-dot bg-yellow-400" style="top: 20%; left: 10%;"></div>
+        <div class="decorative-dot bg-blue-400" style="top: 40%; right: 15%;"></div>
+        <div class="decorative-dot bg-green-400" style="bottom: 30%; left: 20%;"></div>
+    </section>
+</body>
+</html>

@@ -6,22 +6,14 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'OmniAI Docs',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				discord: 'https://discord.gg/DSGHSMCv2H'
 			},
 			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+				{ label: '介绍', link: '/introduction' },
+				{ label: '使用指导', link: 'guides/example' },
+				{ label: '计费方式与模型定价', link: '/model_price' },
 			],
 		}),
 	],
